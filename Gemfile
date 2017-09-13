@@ -18,6 +18,9 @@ gem 'devise', '~> 4.3'
 gem "font-awesome-rails"
 gem 'bootstrap-sass'
 
+#add twilio gem
+gem 'twilio-ruby'
+
 
 
 group :development, :test do

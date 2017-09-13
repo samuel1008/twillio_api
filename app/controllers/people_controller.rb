@@ -1,4 +1,5 @@
 class PeopleController < ApplicationController
+  before_action :authenticate_user!
   before_action :set_person, only: [:show, :edit, :update, :destroy]
 
   # GET /people
@@ -24,7 +25,7 @@ class PeopleController < ApplicationController
   # POST /people
   # POST /people.json
   def create
-    @person = Person.new(person_params)
+    @person = current_user.people.build(person_params)
 
     respond_to do |format|
       if @person.save
@@ -69,6 +70,6 @@ class PeopleController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def person_params
-      params.require(:person).permit(:name, :phone, :user_id)
+      params.require(:person).permit(:name, :phone)
     end
 end

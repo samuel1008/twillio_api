@@ -10,7 +10,14 @@
 // Read Sprockets README (https://github.com/rails/sprockets#sprockets-directives) for details
 // about supported directives.
 //
+//= require bootstrap-sprockets
 //= require rails-ujs
 //= require turbolinks
-//= require_tree .
-//= require bootstrap-sprockets
+//= require_tree 
+
+// This enables Turbolinks progress bar
+$(document).on('ready', function(event) {
+  // initialize persistent state
+  Turbolinks.enableProgressBar();
+//  Turbolinks.ProgressBar.enable();
+});

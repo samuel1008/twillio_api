@@ -17,6 +17,7 @@ gem 'jbuilder', '~> 2.5'
 gem 'devise', '~> 4.3'
 gem "font-awesome-rails"
 gem 'bootstrap-sass'
+gem 'jquery-rails'
 
 #add twilio gem
 gem 'twilio-ruby'
